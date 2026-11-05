@@ -1,0 +1,106 @@
+/* Core Configurations */
+:root {
+    --primary-blue: #0A66C2;
+    --wireframe-gray: #E9ECEF;
+    --text-dark: #212529;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    padding-top: 56px; /* Offset to prevent navbar from covering hero layout */
+    scroll-behavior: smooth;
+}
+
+/* Navbar Tuning */
+.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.navbar-brand {
+    font-weight: 700;
+    color: var(--text-dark) !important;
+    letter-spacing: -0.5px;
+}
+.nav-link {
+    font-weight: 500;
+    color: #555 !important;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-blue) !important;
+}
+
+/* Hero Elements */
+.hero-section {
+    padding: 120px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #fdfdfd 100%);
+}
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+.btn-primary:hover {
+    background-color: #0856A1;
+    border-color: #0856A1;
+}
+
+/* Services / Grid Cards */
+.service-card {
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease-in-out;
+}
+.service-card:hover {
+    transform: translateY(-4px);
+}
+.wireframe-image-box {
+    width: 80px;
+    height: 80px;
+    background-color: var(--wireframe-gray);
+    position: relative;
+    border: 1px solid #ced4da;
+}
+/* Simulating the standard 'X' wireframe image icon box */
+.wireframe-image-box::before, .wireframe-image-box::after {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 1px;
+    background-color: #ced4da;
+    top: 50%;
+    left: 50%;
+}
+.wireframe-image-box::before { transform: translate(-50%, -50%) rotate(45deg); }
+.wireframe-image-box::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+/* About Media Box Placeholder */
+.wireframe-media-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: var(--wireframe-gray);
+    border: 2px dashed #ced4da;
+    position: relative;
+}
+
+/* Footer Link Configurations */
+.footer-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Media Breakdown Logic */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 70px 0;
+    }
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .wireframe-media-placeholder {
+        height: 200px;
+    }
+}
